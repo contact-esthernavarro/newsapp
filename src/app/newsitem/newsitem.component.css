@@ -32,9 +32,24 @@
 }
 
 
-@media only screen and (max-width: 600px){
+@media only screen and (min-width: 570px){
+    .card{
+        margin: auto;
+        width: auto;
+    }
+
+}
+
+@media only screen and (max-width: 570px){
+    .card{
+        margin: auto;
+        width: auto;
+    }
+
+}
+
+@media (min-width: 640px){
     .card{
         margin: auto;
     }
-
 }

@@ -10,6 +10,7 @@ import { NewsitemComponent } from './newsitem/newsitem.component';
 import { ApiService } from './api.service';
 import { CustomPipe } from './custom.pipe';
 import { SearchComponent } from './search/search.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SearchComponent } from './search/search.component';
     HeadersComponent,
     NewsitemComponent,
     CustomPipe,
-    SearchComponent
+    SearchComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
