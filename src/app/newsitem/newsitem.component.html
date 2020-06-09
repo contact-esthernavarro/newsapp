@@ -1,0 +1,26 @@
+<div class="bg-news">
+  <!-- <h4>{{ category }}</h4> -->
+  <div class="card-columns">
+    <div class="card" *ngFor="let article of articles">
+      <div class="card-body text-center">
+        <img alt="{{article.title }}" src="{{article.urlToImage}}" style="width:100%; height: 40%; filter: grayscale(100%);">
+        <br><br>
+        <div>
+          <div class="card-header">
+            <h5>{{article.title | custom:150 }}</h5>
+          </div>
+          <br>
+          <p class="description card-text" *ngIf="isDescriptionEmpty">
+            {{article.description | custom:150 }}
+          </p>
+          <p class="description card-text" *ngIf="!isDescriptionEmpty">
+            {{ article.content | custom:150 }}
+          </p>
+          <hr>
+          <p class="source"> {{ article.source.name | uppercase }}</p>
+          <a href="{{article.url}}" class="btn btn-outline-secondary">Read full article</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

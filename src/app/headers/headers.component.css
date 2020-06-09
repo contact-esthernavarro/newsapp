@@ -1,0 +1,14 @@
+.jumbotron{
+    background-color: rgb(40,40,40);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    height: 250px;
+    margin-top: 50px;
+    padding-top: 10%;
+}
+
+@media only screen and (max-width: 600px){
+    .jumbotron{
+        height: 150px;
+    }
+}

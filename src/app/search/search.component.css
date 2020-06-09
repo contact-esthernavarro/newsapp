@@ -1,0 +1,21 @@
+div{
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn{
+    background-color: rgb(40,40,40);
+    width: 120px;
+    font-family: 'Catamaran', sans-serif;
+}
+
+.bg-search{
+    /* background-color:rgb(238,238,238); */
+    height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.font1{
+    margin-left: 50px;
+    font-stretch: extra-expanded;
+}
