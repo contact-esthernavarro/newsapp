@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "news",
+      "public": "dist/news",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

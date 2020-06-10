@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mypersonalnewsapp": {
+      "hosting": {
+        "news": [
+          "mypersonalnewsapp"
+        ]
+      }
+    }
+  }
+}
