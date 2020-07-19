@@ -17,13 +17,15 @@ export class NewsitemComponent implements OnInit {
   ngOnInit() {
     const list = 'articles';
     const desc = 'description'
-    this.apiService.getNews().subscribe((data) => {
-      this.articles = data[list];
-      console.log(this.articles)
-      if (data[list]['description'] === "" || data[list][desc] == null) {
-        this.isDescriptionEmpty = true;
-      }
-    })
+    this.apiService.getNews()
+      .pipe()
+      .subscribe((data) => {
+        this.articles = data[list];
+        console.log(this.articles)
+        if (data[list]['description'] === "" || data[list][desc] == null) {
+          this.isDescriptionEmpty = true;
+        }
+      })
   }
 
 
@@ -36,7 +38,6 @@ export class NewsitemComponent implements OnInit {
     } else {
       this.apiService.getNewsByCategory(this.category).subscribe((data) => {
         console.log('news category: ', this.category);
-        console.log(data);
         this.articles = data[list];
       });
     }
