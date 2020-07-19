@@ -18,5 +18,5 @@ export class ApiService {
   getNewsByCategory(input: string) {
     return this.httpClient.get(`http://newsapi.org/v2/everything?q=${input}&apiKey=${this.API_KEY}`);
   }
-
+  
 }

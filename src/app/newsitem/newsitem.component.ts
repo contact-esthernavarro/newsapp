@@ -10,34 +10,35 @@ export class NewsitemComponent implements OnInit {
 
   articles = [];
   @Input() category: string;
-  isDescriptionEmpty:boolean = false;
+  isDescriptionEmpty: boolean = false;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    console.log('news items', this.category);
+    const list = 'articles';
+    const desc = 'description'
     this.apiService.getNews().subscribe((data) => {
-      console.log('get news....api');
-      this.articles = data['articles'];
-      if(data['articles']['description'] == "" || data['articles']['description'] == null){
+      this.articles = data[list];
+      console.log(this.articles)
+      if (data[list]['description'] === "" || data[list][desc] == null) {
         this.isDescriptionEmpty = true;
       }
     })
   }
 
+
   ngOnChanges(change: SimpleChange) {
-    console.log('on changes called')
+    const list = 'articles';
     if (this.category == "" || this.category == null || this.category == undefined) {
       this.apiService.getNews().subscribe((data) => {
-        console.log('get news',data);
-        this.articles = data['articles'];
+        this.articles = data[list];
       })
     } else {
       this.apiService.getNewsByCategory(this.category).subscribe((data) => {
         console.log('news category: ', this.category);
         console.log(data);
-        this.articles = data['articles'];
-      })
+        this.articles = data[list];
+      });
     }
   }
 

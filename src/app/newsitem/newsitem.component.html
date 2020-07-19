@@ -11,7 +11,7 @@
           </div>
           <br>
           <p class="description card-text" *ngIf="isDescriptionEmpty">
-            {{article.description | custom:150 }}
+            {{ article.description | custom:150 }}
           </p>
           <p class="description card-text" *ngIf="!isDescriptionEmpty">
             {{ article.content | custom:150 }}

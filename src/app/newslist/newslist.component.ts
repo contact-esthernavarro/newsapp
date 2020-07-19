@@ -13,7 +13,7 @@ export class NewslistComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit():void{
+  ngOnInit(): void{
   }
 
   onSelect(select){

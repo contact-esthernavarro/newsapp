@@ -12,7 +12,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 export class SearchComponent implements OnInit {
 
   @Output() selected = new EventEmitter<string>();
-  categories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology']
+  categories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
   searchForm: FormGroup;
   
 
@@ -21,19 +21,18 @@ export class SearchComponent implements OnInit {
   ngOnInit(){
     this.searchForm = this.formBuilder.group({
       categoryControl: ['']
-    })
+    });
 
-    this.searchForm.statusChanges.subscribe((status) => { console.log(status)});
+    this.searchForm.statusChanges.subscribe((status) => { console.log(status) ; });
   }
 
 
-  onSubmit(select:string){
+  onSubmit(select: string){
     this.selected.emit(select);
 
     this.apiService.getNewsByCategory(select).subscribe((data) => {
       console.log(data);
       this.searchForm.reset();
-    })
-    
+    });
   }
 }
